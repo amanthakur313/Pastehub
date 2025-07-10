@@ -1,54 +1,4 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom'  
-// import Paste from './components/Paste';   
-// import ViewPaste from './components/ViewPaste';  
-// import Navbar from './components/Navbar'; 
-// import Home from './components/Home';    
-  
-// const router = createBrowserRouter(
-//   [
-//     {
-//       path: "",
-//       element: (
-//         <div>
-//           <Navbar />
-//           <Home />
-//         </div>
-//       ),
-//     },
-//     {
-//       path: "/pastes",
-//       element: (
-//         <div>
-//           <Navbar />
-//           <Paste />
-//         </div>
-//       ),
-//     },
-//     {
-//       path: "/pastes/:id",
-//       element: (
-//         <div>
-//           <Navbar />
-//           <ViewPaste />
-//         </div>
-//       ),
-//     },
-//   ]
-// )
 
-// function App() {
-//   return (
-//     <div>
-//       <RouterProvider router={router} />
-//     </div>
-//   )
-// }
-
-// export default App
 import { Routes, Route } from 'react-router-dom';
 import Paste from './components/Paste';
 import ViewPaste from './components/ViewPaste';
@@ -58,7 +8,7 @@ import Home from './components/Home';
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar  className="container mx-auto px-4 lg:px-0 max-w-screen-lg"/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pastes" element={<Paste />} />
