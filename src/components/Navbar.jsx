@@ -7,11 +7,10 @@ import { FaSun, FaMoon } from "react-icons/fa";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(() => {
-    // ✅ Load from localStorage or default to false
+  
     return localStorage.getItem("darkMode") === "true";
   });
 
-  // ✅ Apply class on first load
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -20,9 +19,13 @@ const Navbar = () => {
     }
   }, [darkMode]);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    localStorage.setItem("darkMode", !darkMode); // ✅ Save choice
+
+ const toggleDarkMode = () => {
+    setDarkMode((prev) => {
+      const newValue = !prev;
+      localStorage.setItem("darkMode", newValue);
+      return newValue;
+    });
   };
 
   return (
@@ -64,12 +67,10 @@ const Navbar = () => {
             + New Paste
           </NavLink>
 
-          <button
-            onClick={toggleDarkMode}
-            className="text-white hover:text-yellow-400 text-xl"
-          >
-            {darkMode ? <FaSun /> : <FaMoon />}
-          </button>
+        
+             <button onClick={toggleDarkMode}>
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
         </nav>
       </div>
     </header>
