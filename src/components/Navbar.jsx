@@ -68,7 +68,7 @@ const Navbar = () => {
           </NavLink>
 
         
-             <button onClick={toggleDarkMode}>
+             <button onClick={toggleDarkMode}         className="text-sm px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 dark:text-white text-gray-900 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
         {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
         </nav>
